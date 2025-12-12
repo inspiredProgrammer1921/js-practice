@@ -74,3 +74,35 @@ function getEvenNumbers(numbers) {
 }
 
 console.log(getEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+
+
+
+// Booleans
+function isAdult(birthYear, currentYear) {
+    const age = currentYear - birthYear;
+    return age >= 18;
+}
+
+console.log(isAdult(2010, 2025)); //false
+console.log(isAdult(2000, 2025)); //true
+
+
+// Function filtering with booleans
+function filterByAge(birthYears, currentYear, minAge) {
+    const result = [];
+
+    for (const year of birthYears) {
+        const age = currentYear - year;
+        const meetsRequirement = age >= minAge; // Boolean variable
+
+        if (meetsRequirement) {
+            result.push(year);
+        }
+    }
+
+    return result;
+}
+
+const birthYears = [1980, 2005, 1995, 2010];
+console.log(filterByAge(birthYears, 2025, 21));
