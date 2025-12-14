@@ -106,3 +106,25 @@ function filterByAge(birthYears, currentYear, minAge) {
 
 const birthYears = [1980, 2005, 1995, 2010];
 console.log(filterByAge(birthYears, 2025, 21));
+
+
+// DOB Year Selector
+
+function generateBirthYears() {
+    const currentYear = new Date().getFullYear();
+    const startYear = currentYear - 100;
+    const years = [];
+
+    for (let year = startYear; year <= currentYear; year++) {
+        years.push(year);
+    }
+    return years;
+}
+
+// Validates if the birth year is valid
+function isValidBirthYeart(year) {
+    const currentYear = new Date().getFullYear();
+    const minYear = currentYear - 100;
+
+    return year >= minYear && year <= currentYear;
+}
