@@ -128,3 +128,20 @@ function isValidBirthYeart(year) {
 
     return year >= minYear && year <= currentYear;
 }
+
+// Calculating age from birth year
+function calculateAge(birthYear) {
+    const currentYear = new Date().getFullYear();
+    return currentYear - birthYear;
+}
+
+// Example usage
+const availableYears = generateBirthYears();
+console.log(availableYears); 
+
+console.log(isValidBirthYear(1978)); 
+console.log(isValidBirthYear(2015)); 
+console.log(isValidBirthYear(1900)); 
+
+console.log(calculateAge(1978)); 
+console.log(calculateAge(2015)); 
